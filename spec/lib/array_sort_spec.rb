@@ -6,7 +6,7 @@ RSpec.describe ArraySort do
         Array.new(999) { rand(1000) },
         [101, *1..100],
         [*2..10, 1]
-      ].each_with_index do |array, index|
+      ].each.with_index(1) do |array, index|
         it "should return sorting array_#{index}" do
           expect(described_class.send(method, array)).to eq array.sort
         end

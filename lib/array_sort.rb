@@ -2,6 +2,7 @@ class ArraySort
   # class for sorting methods
 
   class << self
+    # because this methods modify an object, used method_name and method_name!
     %i[bubble_sort selection_sort quick_sort].each do |method|
       define_method(method) { |array| send(:"#{method}!", array.dup) }
     end
